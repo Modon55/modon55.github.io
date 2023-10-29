@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixelino</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2bfcdd4da7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Tools</h2>
+        <button id="add-pixel" class="active"><i class="fa-solid fa-paintbrush"></i></button>
+        <button id="erase-pixel"><i class="fa-solid fa-eraser"></i></button>
+        <button id="clear"><i class="fa-solid fa-trash"></i></button>
+        <div class="brush-tool-window">
+            <div class="arrow"></div>
+            <input type="color" id="color-picker" value="#555555" title="Click to select color">
+        </div>
+    </div>
+   
+    <div class="main-content">
+        <h1 style="font-size: 2em;">Pixelino</h1>
+        <div id="canvas-container">
+            <div id="pixel-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
