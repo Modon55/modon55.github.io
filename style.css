@@ -16,8 +16,8 @@ body{
 
 #pixel-grid{
     display: grid;
-    grid-template-columns: repeat(20, 20px);
-    grid-template-rows: repeat(20, 20px);
+    grid-template-columns: repeat(20, 25px);
+    grid-template-rows: repeat(20, 25px);
     gap: 1px;
     user-select: none;
 }
@@ -38,15 +38,15 @@ body{
 }
 
 button{
-    padding: 10px 20px;
-    font-size: 20px;
-    border: 3px solid #007BFF;
+    padding: 12px 12px;
+    font-size: 22px;
+    border: none;
     background-color: transparent;
-    color: #007BFF;
+    color: #fff;
     cursor: pointer;
-    margin: 10px 10px;
+    margin: 12px 12px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 #clear{
@@ -61,36 +61,72 @@ button{
 }
 
 button:hover{
-    background-color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
+    transform: translateX(10px)
 }
 
 #pixel-grid{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-body{
-    background-color: #333;
-}
-
-body{
-    color: #fff;
-}
-
 button.active{
-    background-color: #007BFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: default;
+    transform: translateX(0);
+}
+
+.sidebar {
+    width: 100px;
+    background-color: #444;
+    padding: 20px;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
 }
 
-.pixel {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #555;
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.color-picker-window {
+    position: absolute;
+    top: 102px;
+    left: 150px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-20px);
 }
 
 #color-picker{
-    width: 80px;
-    height: 25px;
-    margin-top: 10px;
-    margin-right: 21em;
+    appearance: none;
+    width: 44px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#color-picker::-webkit-color-swatch{
+    border-radius: 50%;
+    border: none;
 }

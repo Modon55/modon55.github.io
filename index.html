@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-        <title>Pixelino</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+    <title>Pixelino</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2bfcdd4da7.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-        <h1 style="font-size: 40px; letter-spacing: 3px;">Pixelino</h1>
-
-        <div id="canvas-container">
-            <div id="pixel-grid" style="grid-template-columns: repeat(1fr, 1fr); grid-template-rows: repeat(1fr, 1fr);"></div>
-            <div id="controls">
-                <button id="add-pixel">Brush Tool</button>
-                <button id="erase-pixel">Eraser Tool</button>
-                <button id="clear">Clear</button>
-            </div>
-            <input type="color" id="color-picker" title="Select color">
+    <div class="sidebar">
+        <h2>Tools</h2>
+        <button id="add-pixel" class="active"><i class="fa-solid fa-paintbrush"></i></button>
+        <button id="erase-pixel"><i class="fa-solid fa-eraser"></i></button>
+        <button id="clear"><i class="fa-solid fa-trash"></i></button>
+        <div class="color-picker-window">
+            <input type="color" id="color-picker" value="#555555" title="Click to select color">
         </div>
-
-        <script src="script.js"></script>
+    </div>
+   
+    <div class="main-content">
+        <h1 style="font-size: 2em;">Pixelino</h1>
+        <div id="canvas-container">
+            <div id="pixel-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
