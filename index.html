@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>Pixelino</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/2bfcdd4da7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <div class="loader"></div>
+
+        <div class="main-content">
+            <h1 style="text-transform: uppercase; font-size: 2em;  white-space: nowrap;">
+                Pixelino <span style="color: #ff8c00; border: 1px solid #ff8c00; padding: 3px; font-size: 0.5em;">Alpha</span>
+            </h1>
+            <div id="canvas-container">
+                <div id="pixel-grid"></div>
+            </div>
+        </div>
+
+        <div id="gallery-container" class="gallery-container">
+            <button id="close-gallery-btn" class="close-gallery-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="gallery-content">
+                <h2 data-translate="galleryHeader" style="text-transform: uppercase; margin: 0;">Your personal gallery</h2>
+                <h3 data-translate="galleryHeader2" style="font-weight: normal; color: #888; font-size: 17px;  margin: 10px 0 50px 0">Load your saved pixel art creations.</h3>
+                <div class="gallery-scrollbox"></div>
+                <h6 style="position: absolute; bottom: -20px; margin-top: 0; font-weight: normal; font-size: 15px; width: 65%;">
+                    <a href="https://en.wikipedia.org/wiki/Web_storage" target="_blank" rel="noopener noreferrer" id="gallerywarning-text" data-translate="gallerywarningTXT">
+                        Your saved works are stored locally. If you delete the browser history,
+                        your gallery will be completely emptied.
+                    </a>
+                </h6>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h2 id="tools-header" data-translate="toolsHeader">Tools</h2>
+            
+            <button id="brushtool-btn" class="active"><i class="fa-solid fa-paintbrush"></i></button>
+            <button id="erasetool-btn"><i class="fa-solid fa-eraser"></i></button>
+
+            <div class="brush-tool-window">
+                <div class="color-window-arrow"></div>
+                <input type="color" id="color-picker" value="#555555" title="Click to select color">
+            </div>
+
+            <button id="undo-btn"><i class="fa-solid fa-arrow-rotate-left"></i>
+                <br>
+                <span style="text-transform: uppercase; font-size: 14px; font-weight: bold;">Undo</span>
+            </button>
+            <button id="redo-btn"><i class="fa-solid fa-arrow-rotate-right"></i>
+                <br>
+                <span style="text-transform: uppercase; font-size: 14px; font-weight: bold;">Redo</span>
+            </button>
+            <button id="clear-btn"><i class="fa-solid fa-trash"></i></button>
+            <button id="saveimg-btn"><i class="fa-solid fa-floppy-disk"></i>
+                <br>
+                <span style="text-transform: uppercase; font-size: 14px; font-weight: bold;" data-translate="saveBTN">Save</span>
+            </button>
+            <button id="gallery-btn"><i class="fa-solid fa-images"></i>
+                <br>
+                <span style="text-transform: uppercase; font-size: 14px; font-weight: bold;" data-translate="galleryBTN">Gallery</span>
+            </button>
+            <button id="settings-btn"><i class="fa-solid fa-gear"></i></button>
+            
+            <div class="settings-window">
+                <div class="settings-window-arrow"></div>
+                <span style="font-size: 15px; color: #ee0000;" data-translate="gridsizewarningTXT">Changing the grid size resets the current drawing</span>
+                <p><span data-translate="gridsizeLabel">Grid Size:</span> <span id="grid-size-label">undefined</span></p>
+                <input type="range" id="grid-size-slider" min="1" max="30" value="20">
+            </div>
+        </div>
+
+        <a href="https://github.com/Modon55/modon55.github.io" target="_blank" rel="noopener noreferrer" class="version"><p>v1.41a (23/01/24)</p></a>
+
+        <script src="script.js"></script>
+</body>
+</html>
